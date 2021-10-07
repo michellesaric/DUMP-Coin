@@ -1,0 +1,122 @@
+@font-face {
+  font-family: Fuse Regular;
+  src: url("../assets/fonts/Fuse\ V.2\ Display/FuseV.2Display-Regular.otf");
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(
+    77.53% 55.2% at 57.12% 53.86%,
+    #2b2d30 0.13%,
+    #171b1c 100%
+  );
+}
+
+header {
+  position: relative;
+  background: url("../assets/images/Header.png") no-repeat; /* ovo isto nije dobro, a i ovo se nebi tribalo pokazivat na ciklusu, troba nać drugo rješenje */
+  background-size: 100vw auto;
+  padding: 319px 160px;
+}
+
+.header__title {
+  font-family: Fuse Regular;
+  font-weight: 800;
+  font-size: 112px;
+  line-height: 120px;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.header__subtitle {
+  font-family: Fuse Regular;
+  font-size: 20px;
+  line-height: 32px;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.header__button {
+  padding: 18px 32px;
+  background: #44c79b;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+}
+
+.header__button:active {
+  transform: translateY(3px);
+}
+
+.header__button a {
+  font-family: Fuse Regular;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.landing__section {
+  padding: 104px 116px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.landing__section-container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 48px 61px 56px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing__section-container-title {
+  font-family: Fuse Regular;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 60px;
+  color: #ffffff;
+  margin-top: 48px;
+}
+
+.landing__section-container-text {
+  font-family: Fuse Regular;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  margin-top: 12px;
+}
+
+footer {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px 118px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__title,
+.footer__copyright {
+  font-family: Fuse Regular;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  color: #ffffff;
+}
+
+.footer__copyright {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.footer__logo {
+  margin-left: 16px;
+}
