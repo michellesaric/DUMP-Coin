@@ -1,11 +1,13 @@
 @font-face {
-  font-family: Fuse Regular;
+  font-family: "Fuse Regular";
   src: url("../assets/fonts/Fuse\ V.2\ Display/FuseV.2Display-Regular.otf");
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Fuse Regular";
 }
 
 body {
@@ -16,31 +18,40 @@ body {
   );
 }
 
-header {
+.header {
   position: relative;
-  background: url("../assets/images/Header.png") no-repeat; /* ovo isto nije dobro, a i ovo se nebi tribalo pokazivat na ciklusu, troba nać drugo rješenje */
-  background-size: 100vw auto;
-  padding: 319px 160px;
+  width: 100vw;
 }
 
-.header__title {
-  font-family: Fuse Regular;
+.header-container {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+
+.picture1 {
+  width: 100%;
+  height: auto;
+}
+
+.title {
   font-weight: 800;
   font-size: 112px;
-  line-height: 120px;
   color: #ffffff;
   margin-bottom: 16px;
 }
 
-.header__subtitle {
+.subtitle {
   font-family: Fuse Regular;
   font-size: 20px;
   line-height: 32px;
   color: #ffffff;
   margin-bottom: 40px;
+  margin-left: 8px;
 }
 
-.header__button {
+.button {
+  margin-left: 8px;
   padding: 18px 32px;
   background: #44c79b;
   border-radius: 8px;
@@ -48,26 +59,23 @@ header {
   border: none;
 }
 
-.header__button:active {
-  transform: translateY(3px);
-}
-
-.header__button a {
+.button a {
   font-family: Fuse Regular;
   font-style: normal;
   font-size: 18px;
+  font-weight: 800;
   line-height: 20px;
   color: #ffffff;
   text-decoration: none;
 }
 
-.landing__section {
+.landing-section {
   padding: 104px 116px;
   display: flex;
   justify-content: space-between;
 }
 
-.landing__section-container {
+.section-container {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   padding: 48px 61px 56px 64px;
@@ -76,7 +84,7 @@ header {
   align-items: center;
 }
 
-.landing__section-container-title {
+.section-title {
   font-family: Fuse Regular;
   font-weight: 800;
   font-size: 32px;
@@ -85,7 +93,7 @@ header {
   margin-top: 48px;
 }
 
-.landing__section-container-text {
+.section-text {
   font-family: Fuse Regular;
   font-weight: bold;
   font-size: 18px;
@@ -102,8 +110,8 @@ footer {
   align-items: center;
 }
 
-.footer__title,
-.footer__copyright {
+.footer-title,
+.footer-copyright {
   font-family: Fuse Regular;
   font-weight: 800;
   font-size: 24px;
@@ -111,12 +119,56 @@ footer {
   color: #ffffff;
 }
 
-.footer__copyright {
+.footer-copyright {
   font-weight: normal;
   display: flex;
   align-items: center;
 }
 
-.footer__logo {
+.logo {
   margin-left: 16px;
+}
+
+@media screen and (max-width: 1420px) {
+  .title {
+    font-size: 72px;
+  }
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .landing-section {
+    flex-direction: column;
+  }
+  .section-container {
+    margin: auto;
+    margin-bottom: 64px;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .picture2 {
+    width: 120px;
+  }
+  .landing-section {
+    padding: 104px 40px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .picture1 {
+    display: none;
+  }
+  .header {
+    width: 50%;
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+  }
+  .header-container {
+    position: static;
+    display: flex;
+    flex-direction: column;
+  }
 }

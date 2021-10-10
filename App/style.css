@@ -1,11 +1,12 @@
 @font-face {
-  font-family: Fuse Regular;
+  font-family: "Fuse Regular";
   src: url("../assets/fonts/Fuse\ V.2\ Display/FuseV.2Display-Regular.otf");
 }
 
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Fuse Regular";
 }
 
 body {
@@ -23,64 +24,63 @@ nav {
   background: rgba(255, 255, 255, 0.05);
 }
 
-.navbar__container-button {
-  outline: none;
-  background: transparent;
-  margin-right: 40px;
-  border: none;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 244px;
 }
 
-.colored {
+.button {
+  outline: none;
+  background-color: transparent;
   padding: 8px 12px;
-  background: #44c79b;
+  border: none;
   border-radius: 30px;
 }
 
-.navbar__container-button:last-child {
-  margin-right: none;
+.colored {
+  background: #44c79b;
 }
 
-.navbar__container-button a {
-  font-family: Fuse Regular;
+.button a {
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
   text-decoration: none;
 }
 
-.navbar__account {
+.account {
+  display: flex;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 30px;
   padding: 8px 12px;
-  display: flex;
 }
 
-.navbar__account-text,
-.navbar__account-money,
-.calculator-input-wrapper-value {
-  font-family: Fuse Regular;
+.account-text,
+.account-money,
+.value {
   font-size: 16px;
   line-height: 19px;
   color: #ffffff;
 }
 
-.navbar__account-money {
+.account-money {
   margin-left: 16px;
   font-weight: bold;
 }
 
 main {
-  display: flex; /* ovde height triba namistit da je uvik do kraja screena */
+  display: flex;
 }
 
-.transaction__list {
-  padding: 32px 40px 0px 116px;
+.transactions {
+  padding: 32px 0px 0px 116px;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
+  width: 60%;
 }
 
-.transaction__list-title,
+.title,
 .calculator-title {
-  font-family: Fuse Regular;
   font-weight: 800;
   font-size: 24px;
   line-height: 60px;
@@ -88,29 +88,42 @@ main {
   margin-bottom: 32px;
 }
 
-.transaction__list-card {
+.transaction {
   display: flex;
+  justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   padding: 24px 0px 27px;
+  margin-bottom: 24px;
+  width: calc(100% - 40px);
 }
 
-.transaction__list-card-image {
+.first-transaction {
+  padding-top: 0;
+}
+
+.card-image {
   border-radius: 50%;
   margin: 0px 22.25px;
 }
 
-.transaction__list-card-wrapper-information {
-  display: flex;
-  justify-content: space-between;
-  width: 600px; /* ovo nije dobro, triba nać drugačije rješenje */
-}
-
-.transaction__list-card-wrapper-information div {
+.info1 {
   display: flex;
 }
 
-.transaction__list-card-wrapper-information-name {
+.info2 {
+  display: flex;
+  margin-top: 4px;
+  color: #bfbfbf;
+}
+
+.card-text {
   font-family: Fuse Regular;
+  font-size: 12px;
+  line-height: 120%;
+  color: #bfbfbf;
+}
+
+.card-name {
   font-weight: bold;
   font-size: 18px;
   line-height: 120%;
@@ -118,20 +131,18 @@ main {
   margin-bottom: 16px;
 }
 
-.transaction__list-card-wrapper-information-time,
-.transaction__list-card-wrapper-information-date {
-  font-family: Fuse Regular;
+.card-time,
+.card-date {
   font-size: 16px;
   line-height: 120%;
   color: #bfbfbf;
 }
 
-.transaction__list-card-wrapper-information-date {
+.card-date {
   margin-left: 24px;
 }
 
-.transaction__list-card-wrapper-money {
-  font-family: Fuse Regular;
+.card-money {
   font-size: 16px;
   line-height: 120%;
   color: #bfbfbf;
@@ -146,11 +157,8 @@ main {
   color: #ff2e2e;
 }
 
-.transaction__list-card-wrapper-text {
-  font-family: Fuse Regular;
-  font-size: 12px;
-  line-height: 120%;
-  color: #bfbfbf;
+.last-card {
+  margin-bottom: 100px;
 }
 
 .calculator {
@@ -158,25 +166,34 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 40%;
 }
 
-.calculator-input-wrapper {
+.calculator-title {
+  align-self: flex-start;
+}
+
+.input-container {
   display: flex;
+  align-self: flex-start;
   align-items: center;
+  justify-content: space-between;
+  width: 60%;
   margin-bottom: 24px;
 }
 
-.calculator-input {
+.input {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 15px;
   margin-left: 24px;
-  width: 350px; /* ovo isto nije rješenje, triba podesit width svega*/
+  width: 440px;
+  outline: none;
 }
 
-.calculator-input-wrapper:last-child input {
-  margin-left: 33px;
+.value {
+  width: 220px;
 }
 
 .calculator-button {
@@ -194,12 +211,4 @@ main {
   margin-top: 40px;
   display: flex;
   align-items: center;
-}
-
-.calculator-button:active {
-  transform: translateY(3px);
-}
-
-.calculator-button-icon {
-  margin-right: 11px;
 }
